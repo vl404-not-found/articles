@@ -129,7 +129,7 @@ GRAPHENE = {
     ],
 }
 
-ALLOWED_HOSTS = ['articles.techno-team.ru']
+ALLOWED_HOSTS = ['articles.techno-team.ru', '0.0.0.0', '95.216.148.15']
 
 DATABASES = {
     'default': {
