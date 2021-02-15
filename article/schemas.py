@@ -15,7 +15,6 @@ class ArticleType(DjangoObjectType):
 class Query(graphene.ObjectType):
     article = graphene.Field(ArticleType, id=graphene.UUID())
 
-    @login_required
     def resolve_article(self, info, **kwargs):
         ident = kwargs.get('id')
         # slug = kwargs.get('slug')
