@@ -1,0 +1,39 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: site_db
+      POSTGRES_DB: site_db
+      POSTGRES_PASSWORD: 3602b78ae146483e99b9b74c2f52225235cfc777
+    volumes:
+      - /home/ln/db:/var/lib/postgresql/data # persist data even if container shuts down
+
+  mainapp:
+    build: .
+    restart: always
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+      - /home/ln/media:/code/media
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+volumes:
+  db:
+  mainapp:
