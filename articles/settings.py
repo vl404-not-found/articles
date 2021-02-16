@@ -74,12 +74,12 @@ WSGI_APPLICATION = 'articles.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -129,7 +129,7 @@ GRAPHENE = {
     ],
 }
 
-ALLOWED_HOSTS = ['articles.techno-team.ru', '0.0.0.0', '95.216.148.15']
+ALLOWED_HOSTS = ['articles.techno-team.ru', '0.0.0.0', '95.216.148.15', '127.0.0.1']
 
 DATABASES = {
     'default': {

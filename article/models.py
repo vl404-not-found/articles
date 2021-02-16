@@ -8,6 +8,7 @@ from django.dispatch import receiver
 
 
 
+
 class Profile(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -28,7 +29,7 @@ def save_user_profile(sender, instance, **kwargs):
 
 class Article(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
-    author = models.OneToOneField(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     slug = models.SlugField()
     text = models.TextField()

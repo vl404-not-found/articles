@@ -14,6 +14,10 @@ class ArticleType(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     article = graphene.Field(ArticleType, id=graphene.UUID())
+    articles = graphene.List(ArticleType)
+
+    def resolve_articles(root, info):
+        return Article.objects.all()
 
     def resolve_article(self, info, **kwargs):
         ident = kwargs.get('id')
