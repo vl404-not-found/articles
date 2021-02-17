@@ -131,13 +131,13 @@ GRAPHENE = {
 
 ALLOWED_HOSTS = ['articles.techno-team.ru', '0.0.0.0', '95.216.148.15', '127.0.0.1']
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'site_db',
-        'USER': 'site_db',
-        'PASSWORD': '3602b78ae146483e99b9b74c2f52225235cfc777',
-        'HOST': 'db',
-        'PORT': 5432,
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'site_db',
+#         'USER': 'site_db',
+#         'PASSWORD': '3602b78ae146483e99b9b74c2f52225235cfc777',
+#         'HOST': 'db',
+#         'PORT': 5432,
+#     }
+# }
